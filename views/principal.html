@@ -1,0 +1,30 @@
+<h2 id="h2-format">
+    Livros</h2>
+<div class="row">
+    <div class="products col-sm-12 col-md-4" ng-repeat="p in produtos| filter: filtro as filtrado" style="margin-bottom:30px">
+        <div class="container" id="styPr">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <img ng-src="https://picsum.photos/150/150?image={{p.id}}" alt="{{p.nome}}" class="img-fluid" />
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="">{{p.nome}}</h5>
+
+
+                        </div>
+                        <div class="col-12">
+                            <a ui-sref="produto({id: {{p.id}}})" class="btn btn-primary btn-block">Detalhes</a>
+                        </div>
+                        <div class="col-12">
+                            <a ui-sref="#" class="btn btn-success btn-block">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p ng-if="filtrado.length === 0" class="alert alert-warning">Nenhum produto encontrado.</p>
+</div>

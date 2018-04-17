@@ -1,0 +1,28 @@
+.ul-format {
+    list-style-type:none;
+    -webkit-padding-start: 0px !important;
+}
+
+.li-format{
+    margin-bottom: 2%;
+    border-bottom: 1px solid gray;
+}
+
+.container-fluid{
+    padding: 0px;
+}
+
+#navbar-format{
+    background-color: #006400;
+}
+
+#navbar-format-02{
+    background-color: gray;
+}
+
+#h2-format{
+    border-bottom: 1px solid gray;
+}
+#styPr{
+    border: 1px solid black;
+}
