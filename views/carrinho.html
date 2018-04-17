@@ -1,0 +1,24 @@
+<h2 id="h2-format">
+    Carrinho
+</h2>
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Produto</th>
+                <th>Preço</th>
+    <!--             <th>Quantidade</th> -->
+                <!-- <th>Sub-Total</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="prod in carrinho">
+                <td>{{prod.id}}</td>
+                <td>{{prod.nome}}</td>
+                <td>{{prod.preco}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

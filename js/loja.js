@@ -13,12 +13,16 @@ loja.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'produto'
     });
 
-    $urlRouterProvider.otherwise('/');
+    $stateProvider.state('carrinho', {
+        url: '/carrinho/:id',
+        templateUrl: 'views/carrinho.html',
+        controller: 'carrinho'
+    });
 
+    $urlRouterProvider.otherwise('/');
 });
 
 loja.controller('principal', function ($scope, $produtos) {
-
     $scope.min = 0;
     $scope.max = 10000;
 
@@ -31,13 +35,19 @@ loja.controller('principal', function ($scope, $produtos) {
     $scope.filtro = function (produto) {
         return produto.preco >= $scope.min && produto.preco <= $scope.max;
     };
-
 });
 
 loja.controller('produto', function ($scope, $stateParams, $produtos) {
-
     $scope.produto = $produtos.getProduto($stateParams.id);
+});
 
+loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produtos) {
+    if ($rootScope.carrinho) {
+        $rootScope.carrinho.push($produtos.getProduto($stateParams.id));    
+    } else {
+        $rootScope.carrinho = [];
+        $rootScope.carrinho.push($produtos.getProduto($stateParams.id));
+    }
 });
 
 loja.factory('$produtos', function ($http, $q) {
