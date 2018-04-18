@@ -1,7 +1,6 @@
 var loja = angular.module('loja', ['ui.router']);
 
 loja.config(function ($stateProvider, $urlRouterProvider) {
-
     $stateProvider.state('principal', {
         url: '/',
         templateUrl: 'views/principal.html',
@@ -43,7 +42,8 @@ loja.controller('produto', function ($scope, $stateParams, $produtos) {
 
 loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produtos) {
     if ($rootScope.carrinho) {
-        var p = $rootScope.carrinho.indexOf($stateParams.id);
+        var p = -1;
+        verifica(parseInt($stateParams.id, 10));
         var prod = $produtos.getProduto($stateParams.id);
         if(p != 0){
             var aux = parseInt($stateParams.qtd, 10);
@@ -61,6 +61,17 @@ loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produto
         var prod = $produtos.getProduto($stateParams.id);
         prod.quantidade = parseInt($stateParams.qtd, 10);
         $rootScope.carrinho.push(prod);
+    }
+
+    function verifica(id){
+        for(var i = 0; i < $rootScope.carrinho.length; i++) {
+            if($rootScope.carrinho[i].id === id) {
+                p = -1;
+                break;
+            } else {
+                p = 0;
+            }
+        }
     }
 });
 
