@@ -8,8 +8,8 @@
                 <th>#</th>
                 <th>Produto</th>
                 <th>Preço</th>
-    <!--             <th>Quantidade</th> -->
-                <!-- <th>Sub-Total</th> -->
+                <th>Quantidade</th>
+                <th>Sub-Total</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +17,8 @@
                 <td>{{prod.id}}</td>
                 <td>{{prod.nome}}</td>
                 <td>{{prod.preco}}</td>
+                <td>{{prod.quantidade}}</td>
+                <td>{{prod.quantidade*prod.preco}}</td>
             </tr>
         </tbody>
 
