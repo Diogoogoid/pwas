@@ -14,7 +14,7 @@ loja.config(function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state('carrinho', {
-        url: '/carrinho/:id',
+        url: '/carrinho/:id?qtd',
         templateUrl: 'views/carrinho.html',
         controller: 'carrinho'
     });
@@ -43,10 +43,24 @@ loja.controller('produto', function ($scope, $stateParams, $produtos) {
 
 loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produtos) {
     if ($rootScope.carrinho) {
-        $rootScope.carrinho.push($produtos.getProduto($stateParams.id));    
+        var p = $rootScope.carrinho.indexOf($stateParams.id);
+        var prod = $produtos.getProduto($stateParams.id);
+        if(p != 0){
+            var aux = parseInt($stateParams.qtd, 10);
+            for(var i = 0; i < $rootScope.carrinho.length; i++) {
+                if($rootScope.carrinho[i].id == prod.id) {
+                    $rootScope.carrinho[i].quantidade += aux;
+                }
+            }
+        } else {
+            prod.quantidade = parseInt($stateParams.qtd, 10);
+            $rootScope.carrinho.push(prod);
+        }
     } else {
         $rootScope.carrinho = [];
-        $rootScope.carrinho.push($produtos.getProduto($stateParams.id));
+        var prod = $produtos.getProduto($stateParams.id);
+        prod.quantidade = parseInt($stateParams.qtd, 10);
+        $rootScope.carrinho.push(prod);
     }
 });
 
