@@ -1,89 +1,275 @@
 <!DOCTYPE html>
 <html ng-app="loja" ng-controller="principal">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Livraria Astec</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style/padroes.css">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Livraria Astec</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="js/main.js"></script>
+    </head>
 
-<body>
-    <div class="container-fluid">
-        <!-- Header-->
-        <nav class="navbar" id="navbar-format">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo3-07.png" alt="Logo">
-            </a>
-        </nav>
+    <body>
+
+        <div class="ajustar">
+            <br>
+        </div>
         <div class="container">
-
-            <!-- Filters -->
-            <div class="dropdown drop">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Filtros
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <form action="#">
-                        <div class="form-group">
-                            <label for="preco-min">Preço Mínimo: R$ {{min}}</label>
-                            <input type="range" id="preco-min" class="form-control" min="0" max="10000" value="0" ng-model="min" />
+            <div class="row">
+    
+                <!-- inicio do slider-->
+                <div class="col-12">
+    
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top:5px">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active li-color"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="li-color"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="li-color"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3" class="li-color"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="4" class="li-color"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="5" class="li-color"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="./carousel/1.png" alt="Primeiro slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./carousel/2.png" alt="Segundo slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./carousel/3.png" alt="Terceiro slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./carousel/4.png" alt="Quarto slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./carousel/5.png" alt="Quinto slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./carousel/6.png" alt="Sexto slide">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="preco-max">Preço Máximo: R$ {{max}}</label>
-                            <input type="range" id="preco-max" class="form-control" min="0" max="10000" value="10000" ng-model="max" />
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only ">Next</span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- fim do slider -->
+    
+                <div class="col-12">
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+    
                         </div>
-                    </form>
+    
+                        <div class="col-sm-12 col-md-6 d-sm-none d-md-block">
+    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" ui-view></div>
+                    </div>
+    
+    
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Filtros
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation" class="dropdown-header">Valores</li>
-                    <form action="#">
-                        <div class="form-group">
-                            <label for="preco-min">Preço Mínimo: R$ {{min}}</label>
-                            <input type="range" id="preco-min" class="form-control" min="0" max="10000" value="0" ng-model="min" />
+    
+    
+    
+    
+    
+        </div>
+        <footer>
+            <p class="text-center">&copy; Livraria Astec - Todos os direitos reservados.</p>
+        </footer>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="width:80%">
+                <div class="modal-content">
+                    <div class="modal-header btn btn-primary">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="color:#ffffff">Categorias</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action">Drama</a>
+                            <a href="#" class="list-group-item list-group-item-action">Romance</a>
+                            <a href="#" class="list-group-item list-group-item-action">Suspense</a>
+                            <a href="#" class="list-group-item list-group-item-action">Ficção Cientifica</a>
+                            <a href="#" class="list-group-item list-group-item-action">Fantasia</a>
+                            <a href="#" class="list-group-item list-group-item-action">Aventura</a>
+                            <a href="#" class="list-group-item list-group-item-action">Comédia</a>
+                            <a href="#" class="list-group-item list-group-item-action">Terror</a>
+                            <a href="#" class="list-group-item list-group-item-action">Autoajuda</a>
+                            <a href="#" class="list-group-item list-group-item-action">Religiosos</a>
+                            <a href="#" class="list-group-item list-group-item-action">Estudos</a>
                         </div>
-                        <div class="form-group">
-                            <label for="preco-max">Preço Máximo: R$ {{max}}</label>
-                            <input type="range" id="preco-max" class="form-control" min="0" max="10000" value="10000" ng-model="max" />
-                        </div>
-                    </form>
-                    <li role="presentation" class="dropdown-header">Categorias</li>
-                    <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="#">Aplicar</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- List Product -->
-            <div class="row">
-                <div class="col-12" ui-view></div>
-            </div>
-            <!-- Footer -->
-            <div class="row">
-                <div class="col-12">
-                    <p>Copyright &copy; 2018 - Todos os direitos reservados.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <br>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="navFixed">
+            <!-- Inicio do navbar Principal -->
+            <nav class="navbar navbar-dark bg-primary">
+                <div class="container-fluid" style="padding-right:0px">
+                    <div class="row" style="width:100%">
+                        <!-- botao mobile menu -->
+                        <div class="col-3 col-md-1 d-block d-md-none">
+                            <button class="btn btn-light btn-sm" type="button" data-toggle="modal" data-target="#exampleModalLong">
+                                <i class="material-icons" id="iconeMenu">view_headline</i>
+                            </button>
+                        </div>
+                        <!-- Logo -->
+                        <div class="col-6 col-md-2">
+                            <a class="navbar-brand" href="#">
+                                <img src="imagens/logo3-07.png" height="40px" alt="Livraria Astec">
+                            </a>
+                        </div>
+                        <!-- botao mobile CARRINHO E LOGIN -->
+                        <div class="col-3 d-block d-md-none justify-content-end" id="mobileCarLog">
+                            <div class="row">
+                                <div class="col-6">
+                                    <i class="material-icons log">input</i>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-warning car" href="#">
+                                        <i class="material-icons" style="font-size: 20px;margin:0px;padding:0px;color:#ffffff">shopping_cart</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- botao desktop LOGIN -->
+                        <div class="col-3 col-md-3 order-11 d-none d-md-block">
+    
+                            <div class="media float-md-right">
+                                <i class="material-icons align-self-center mr-3">input</i>
+                                <div class="media-body">
+                                    <h5 class="mt-0"></h5>
+                                    <a href="#" class="mb-0">Entre
+                                        <span href="#">ou Cadastre-se</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- botao desktop  CARRINHO-->
+                        <div class="col-1 col-md-1 order-12 d-none d-md-block">
+                            <div>
+                                <button class="btn btn-warning" id="btnCarDesk" href="#">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+    
+                            </div>
+    
+                        </div>
+    
+                        <!-- SEARCHR BAR-->
+                        <div class="col-12 col-md-6">
+                            <div class="input-group mb-3">
+                                <input type="search" class="form-control" placeholder="O que procura?" aria-label="busca" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-light" type="button">
+                                        <i class="material-icons">search</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </nav>
+            <!-- Fim do navbar Principal -->
+    
+            <!-- Inicio do nav das categorias -->
+    
+            <nav class="nav nav-pills nav-fill d-none d-md-block border-bottom border-primary" style="background:#f8f9fa">
+                <ul class="nav nav-item nav-pills">
+    
+                    <li class="nav-item nav-link dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Todas as Categorias</a>
+                        <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#" class="dropdown-item nav-format-hov">Drama</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Romance</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Suspense</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Ficção Cientifica</a>
+    
+                                    <a href="#" class="dropdown-item nav-format-hov">Religiosos</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Estudos</a>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="dropdown-item nav-format-hov">Fantasia</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Aventura</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Comédia</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Terror</a>
+                                    <a href="#" class="dropdown-item nav-format-hov">Autoajuda</a>
+                                </div>
+                                <div class="col">
+    
+    
+                                </div>
+                            </div>
+    
+    
+    
+                        </div>
+                    </li>
+                    <li class="nav-item nav-link d-none d-lg-block d-xl-none nav-format-hov">
+                        <a class="nav-link nav-format-hov" href="#">Romance</a>
+                    </li>
+                    <li class="nav-item nav-link d-none d-lg-block d-xl-none">
+                        <a class="nav-link nav-format-hov" href="#">Drama</a>
+                    </li>
+                    <li class="nav-item nav-link ">
+                        <a class="nav-link nav-format-hov" href="#">Fantasia</a>
+                    </li>
+                    <li class="nav-item nav-link d-none d-lg-block d-xl-none">
+                        <a class="nav-link nav-format-hov" href="#">Aventura</a>
+                    </li>
+                    <li class="nav-item nav-link d-none d-xl-block">
+                        <a class="nav-link nav-format-hov" href="#">Ficção cientifica</a>
+                    </li>
+                    <li class="nav-item nav-link">
+                        <a class="nav-link nav-format-hov" href="#">Suspense</a>
+                    </li>
+                    <li class="nav-item nav-link">
+                        <a class="nav-link nav-format-hov" href="#">Estudos</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- fim do nav das categorias -->
+            
+        </div>
 
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-    <script src="js/loja.js" type="text/javascript"></script>
-</body>
-
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+        <script src="js/loja.js" type="text/javascript"></script>
+        
+    </body>
 </html>

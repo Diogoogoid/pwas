@@ -1,5 +1,4 @@
-<h2 id="h2-format">
-    Livros</h2>
+<!--
 <div class="row">
     <div class="products col-sm-12 col-md-4" ng-repeat="p in produtos| filter: filtro as filtrado" style="margin-bottom:30px">
         <div class="container" id="styPr">
@@ -25,4 +24,32 @@
     </div>
 
     <p ng-if="filtrado.length === 0" class="alert alert-warning">Nenhum produto encontrado.</p>
+</div>
+-->
+<div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-3" ng-repeat="p in produtos| filter: filtro as filtrado">
+        <div class="card text-center">
+            <img ng-src={{p.url}} alt="{{p.nome}}" class="img-fluid" />
+            <div class="card-body">
+                <h5 class="card-title">{{p.nome}}</h5>
+                <div class="row">
+                    <div class="col-12">
+                        <label for=""><h5>R$ {{p.preco}}</h5></label>
+                    </div>
+                    <div class="col-12">
+                        <a ui-sref="produto({id: {{p.id}}})" class="btn btn-outline-primary btn-large btn-block">Detalhes</a>
+                    </div>
+                    <div class="col-12">
+
+                        <a ui-sref="carrinho({id: {{p.id}}})" class="btn btn-primary btn-grid-carrinho btn-block">
+                            <i class="material-icons">add_circle_outlineshopping_cart</i>
+                            <span class="frase-btn-carrinho">Add ao carrinho</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p ng-if="filtrado.length === 0" class="alert alert-warning">Nenhum produto encontrado.</p>
+    </div>
 </div>

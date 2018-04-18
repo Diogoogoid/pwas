@@ -1,5 +1,31 @@
+<!-- 
 <h2>{{produto.nome}}</h2>
 <p><img ng-src={{produto.url}} alt="{{produto.url}}" class="img-fluid"/></p>
 <p>{{produto.descricao}}</p>
 <p>Preço: R$ {{produto.preco}}</p>
 <p><a ui-sref="carrinho" class="btn btn-primary">Comprar</a></p>
+-->
+<div class="col-sm-12 col-md-4 col-lg-12" >
+    <div class="card text-center">
+        <img ng-src={{produto.url}} alt="{{produto.nome}}" class="img-fluid" />
+        <div class="card-body">
+            <h5 class="card-title">{{produto.nome}}</h5>
+            
+
+            <div class="row">
+                <div class="col-12">
+                    <p class="card-text">{{produto.descricao}}</p>
+                    <label for=""><h5>R$ {{produto.preco}}</h5></label>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <a ui-sref="produto({id: {{produto.id}}})" class="btn btn-outline-primary btn-large btn-block">Detalhes</a>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <a ui-sref="carrinho({id: {{produto.id}}})" class="btn btn-primary btn-grid-carrinho btn-block">
+                        <i class="material-icons">add_circle_outlineshopping_cart</i>
+                        <span class="frase-btn-carrinho">Add ao carrinho</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
