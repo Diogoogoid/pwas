@@ -36,8 +36,16 @@ loja.controller('principal', function ($scope, $produtos) {
     };
 });
 
-loja.controller('produto', function ($scope, $stateParams, $produtos) {
+loja.controller('produto', function ($scope, $stateParams, $produtos, $location) {
+    $scope.quantidade = 0;
     $scope.produto = $produtos.getProduto($stateParams.id);
+
+    $scope.addCarrinho = () => {
+        $stateParams.id= $scope.produto.id; 
+        $stateParams.qtd= $scope.quantidade; 
+    
+        $location.path("/carrinho/").search($stateParams);
+    }
 });
 
 loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produtos) {

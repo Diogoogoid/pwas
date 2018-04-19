@@ -19,13 +19,13 @@
                 </div>
                 <div class="col-12">
                     <label>Quantidade</label>
-                    <input type="number" ng-model="quantidade"/>
+                    <input type="number" ng-value="0" min="0" ng-model="quantidade"/>
                 </div>
                 <div class="col-12 col-lg-4">
                     <a ui-sref="produto({id: {{produto.id}}})" class="btn btn-outline-primary btn-large btn-block">Detalhes</a>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <a ui-sref="carrinho({id: {{produto.id}}, qtd: {{quantidade}}})" class="btn btn-primary btn-grid-carrinho btn-block">
+                    <a ng-click="addCarrinho()" class="btn btn-primary btn-grid-carrinho btn-block">
                         <i class="material-icons">add_circle_outlineshopping_cart</i>
                         <span class="frase-btn-carrinho">Add ao carrinho</span>
                     </a>
