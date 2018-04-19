@@ -43,7 +43,7 @@ loja.controller('principal', function ($scope, $produtos) {
 });
 
 loja.controller('produto', function ($scope, $stateParams, $state, $produtos, $location) {
-    $scope.quantidade = 0;
+    $scope.quantidade = 1;
     $scope.produto = $produtos.getProduto($stateParams.id);
 
     $scope.addCarrinho = () => {
