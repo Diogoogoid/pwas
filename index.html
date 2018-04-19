@@ -11,9 +11,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
         <link rel="stylesheet" type="text/css" href="style/padroes.css"/>
-        <script src="js/main.js"></script>
     </head>
 
     <body>
@@ -27,7 +26,7 @@
                 <!-- inicio do slider-->
                 <div class="col-12">
     
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top:5px">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top:60px">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active li-color"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1" class="li-color"></li>
@@ -153,7 +152,7 @@
                                     <i class="material-icons log">input</i>
                                 </div>
                                 <div class="col-6">
-                                    <button class="btn btn-warning car" href="#">
+                                    <button class="btn btn-warning car">
                                         <i class="material-icons" style="font-size: 20px;margin:0px;padding:0px;color:#ffffff">shopping_cart</i>
                                     </button>
                                 </div>
@@ -177,7 +176,7 @@
                         <!-- botao desktop  CARRINHO-->
                         <div class="col-1 col-md-1 order-12 d-none d-md-block">
                             <div>
-                                <button class="btn btn-warning" id="btnCarDesk" href="#">
+                                <button class="btn btn-warning" id="btnCarDesk" ng-href="carrinho">
                                     <i class="material-icons">shopping_cart</i>
                                 </button>
     
@@ -204,59 +203,17 @@
     
             <!-- Inicio do nav das categorias -->
     
-            <nav class="nav nav-pills nav-fill d-none d-md-block border-bottom border-primary" style="background:#f8f9fa">
+            <nav class="nav nav-pills nav-fill d-none border-bottom border-primary" style="background:#f8f9fa">
                 <ul class="nav nav-item nav-pills">
-    
                     <li class="nav-item nav-link dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Todas as Categorias</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filtros</a>
                         <div class="dropdown-menu">
                             <div class="row">
                                 <div class="col">
-                                    <a href="#" class="dropdown-item nav-format-hov">Drama</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Romance</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Suspense</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Ficção Cientifica</a>
-    
-                                    <a href="#" class="dropdown-item nav-format-hov">Religiosos</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Estudos</a>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="dropdown-item nav-format-hov">Fantasia</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Aventura</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Comédia</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Terror</a>
-                                    <a href="#" class="dropdown-item nav-format-hov">Autoajuda</a>
-                                </div>
-                                <div class="col">
-    
-    
+                                    
                                 </div>
                             </div>
-    
-    
-    
                         </div>
-                    </li>
-                    <li class="nav-item nav-link d-none d-lg-block d-xl-none nav-format-hov">
-                        <a class="nav-link nav-format-hov" href="#">Romance</a>
-                    </li>
-                    <li class="nav-item nav-link d-none d-lg-block d-xl-none">
-                        <a class="nav-link nav-format-hov" href="#">Drama</a>
-                    </li>
-                    <li class="nav-item nav-link ">
-                        <a class="nav-link nav-format-hov" href="#">Fantasia</a>
-                    </li>
-                    <li class="nav-item nav-link d-none d-lg-block d-xl-none">
-                        <a class="nav-link nav-format-hov" href="#">Aventura</a>
-                    </li>
-                    <li class="nav-item nav-link d-none d-xl-block">
-                        <a class="nav-link nav-format-hov" href="#">Ficção cientifica</a>
-                    </li>
-                    <li class="nav-item nav-link">
-                        <a class="nav-link nav-format-hov" href="#">Suspense</a>
-                    </li>
-                    <li class="nav-item nav-link">
-                        <a class="nav-link nav-format-hov" href="#">Estudos</a>
                     </li>
                 </ul>
             </nav>
@@ -271,6 +228,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
         <script src="js/loja.js" type="text/javascript"></script>
-        
+        <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

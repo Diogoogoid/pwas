@@ -18,6 +18,12 @@ loja.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'carrinho'
     });
 
+    $stateProvider.state('resumo', {
+        url: '/resumo',
+        templateUrl: 'views/carrinho.html',
+        controller: 'resumo'
+    });
+
     $urlRouterProvider.otherwise('/');
 });
 
