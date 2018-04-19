@@ -101,4 +101,11 @@
     margin-top: 15px;
 }
 
+.total-itens{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: auto;
+}
+
 /** fim Footer**/

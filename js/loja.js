@@ -27,7 +27,7 @@ loja.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 });
 
-loja.controller('principal', function ($scope, $produtos, $state) {
+loja.controller('principal', function ($scope, $rootScope, $produtos, $state) {
     $scope.min = 0;
     $scope.max = 10000;
 
@@ -36,6 +36,14 @@ loja.controller('principal', function ($scope, $produtos, $state) {
     $produtos.carregarProdutos().then(function (produtos) {
         $scope.produtos = produtos;
     });
+
+    $scope.totalProduto = 0;
+    if($rootScope.carrinho){
+        for(var i = 0 ; i < $rootScope.carrinho.length; i++){
+            $scope.totalProduto += $rootScope.carrinho[i].quantidade;
+        }
+    }
+
 
     $scope.goCarrinho = () => {
         $state.go('carrinho');
