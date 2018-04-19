@@ -12,22 +12,22 @@ loja.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'produto'
     });
 
-    $stateProvider.state('carrinho', {
+    $stateProvider.state('addCarrinho', {
         url: '/carrinho?id&qtd',
         templateUrl: 'views/carrinho.html',
-        controller: 'carrinho'
+        controller: 'addCarrinho'
     });
 
-    $stateProvider.state('resumo', {
-        url: '/resumo',
+    $stateProvider.state('carrinho', {
+        url: '/carrinho',
         templateUrl: 'views/carrinho.html',
-        controller: 'resumo'
+        controller: 'carrinho'
     });
 
     $urlRouterProvider.otherwise('/');
 });
 
-loja.controller('principal', function ($scope, $produtos) {
+loja.controller('principal', function ($scope, $produtos, $state) {
     $scope.min = 0;
     $scope.max = 10000;
 
@@ -36,6 +36,10 @@ loja.controller('principal', function ($scope, $produtos) {
     $produtos.carregarProdutos().then(function (produtos) {
         $scope.produtos = produtos;
     });
+
+    $scope.goCarrinho = () => {
+        $state.go('carrinho');
+    }
 
     $scope.filtro = function (produto) {
         return produto.preco >= $scope.min && produto.preco <= $scope.max;
@@ -47,11 +51,11 @@ loja.controller('produto', function ($scope, $stateParams, $state, $produtos, $l
     $scope.produto = $produtos.getProduto($stateParams.id);
 
     $scope.addCarrinho = () => {
-        $state.go('carrinho', {id: $scope.produto.id, qtd: $scope.quantidade});
+        $state.go('addCarrinho', {id: $scope.produto.id, qtd: $scope.quantidade});
     }
 });
 
-loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produtos) {
+loja.controller('addCarrinho', function ($scope, $rootScope, $stateParams, $produtos) {
     if ($rootScope.carrinho) {
         var p = -1;
         verifica(parseInt($stateParams.id, 10));
@@ -74,6 +78,13 @@ loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produto
         $rootScope.carrinho.push(prod);
     }
 
+    var aux = $rootScope.carrinho.map(e => e.quantidade*e.preco);
+
+    $scope.total = 0;
+    for(var i = 0; i < aux.length; i++) {
+        $scope.total += aux[i];
+    }
+
     function verifica(id){
         for(var i = 0; i < $rootScope.carrinho.length; i++) {
             if($rootScope.carrinho[i].id === id) {
@@ -82,6 +93,17 @@ loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produto
             } else {
                 p = 0;
             }
+        }
+    }
+});
+
+loja.controller('carrinho', function ($scope, $rootScope, $stateParams, $produtos) {
+    if ($rootScope.carrinho) {
+        var aux = $rootScope.carrinho.map(e => e.quantidade*e.preco);
+
+        $scope.total = 0;
+        for(var i = 0; i < aux.length; i++) {
+            $scope.total += aux[i];
         }
     }
 });
