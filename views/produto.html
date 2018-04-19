@@ -5,7 +5,7 @@
 <p>Preço: R$ {{produto.preco}}</p>
 <p><a ui-sref="carrinho" class="btn btn-primary">Comprar</a></p>
 -->
-<div class="col-sm-12 col-md-4 col-lg-12" >
+<div class="col-12" >
     <div class="card text-center">
         <img ng-src={{produto.url}} alt="{{produto.nome}}" class="img-fluid" />
         <div class="card-body">
@@ -17,12 +17,14 @@
                     <p class="card-text">{{produto.descricao}}</p>
                     <label for=""><h5>R$ {{produto.preco}}</h5></label>
                 </div>
-                <div class="col-12">
-                    <a ui-sref="carrinho({id: {{p.id}}, qtd: 1})" class="btn btn-primary btn-grid-carrinho btn-block">
-                        <i class="material-icons">add_circle_outlineshopping_cart</i>
-                        <span class="frase-btn-carrinho">Add ao carrinho</span>
-                    </a>
-                </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-3"></div>
+                        <a ui-sref="carrinho({id: {{p.id}}, qtd: 1})" class=" col-12 col-lg-6 btn btn-primary btn-grid-carrinho btn-block " >
+                            <i class="material-icons" style="color: #ffc107">add_circle_outlineshopping_cart</i>
+                            <span class="frase-btn-carrinho" style="color: white">Add ao carrinho</span>
+                        </a>
+                    <div class="col-lg-3"></div>    
             </div>
         </div>
     </div>

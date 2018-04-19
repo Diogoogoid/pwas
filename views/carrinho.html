@@ -2,30 +2,30 @@
     Resumo da Compra
 </h2>
 <div class="row">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Produto</th>
-                <th scope="col">Preço</th>
-                <th scope="col">Qtd</th>
-                <th scope="col">Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="prod in carrinho" scope="row">
-                <td>{{prod.id}}</td>
-                <td>{{prod.nome}}</td>
-                <td>R${{prod.preco}}</td>
-                <td>{{prod.quantidade}}</td>
-                <td>R${{prod.quantidade*prod.preco}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Qtd</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="prod in carrinho" scope="row">
+                    <td>{{prod.id}}</td>
+                    <td>{{prod.nome}}</td>
+                    <td>R${{prod.preco}}</td>
+                    <td>{{prod.quantidade}}</td>
+                    <td>R${{prod.quantidade*prod.preco}}</td>
+                </tr>
+            </tbody>
+        </table>
+        table
         <div class="col">
                 <a ng-href="#" class="align-text"><h5 class="row-format">Adicionar mais produtos</h5></a>
         </div>
-        
-    <hr>
+    </div>
 </div>
