@@ -16,20 +16,21 @@
                 <div class="col-12">
                     <p class="card-text">{{produto.descricao}}</p>
                     <label for=""><h5>R$ {{produto.preco}}</h5></label>
-                </div>
-                <div class="col-12">
-                    <label>Quantidade</label>
-                    <input type="number" ng-value="0" min="0" ng-model="quantidade"/>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <a ui-sref="produto({id: {{produto.id}}})" class="btn btn-outline-primary btn-large btn-block">Detalhes</a>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <a ng-click="addCarrinho()" class="btn btn-primary btn-grid-carrinho btn-block">
-                        <i class="material-icons">add_circle_outlineshopping_cart</i>
-                        <span class="frase-btn-carrinho">Add ao carrinho</span>
+                </div>             
+            </div>
+            <div class="row">
+                    <div class="col-12">
+                            <label>Quantidade</label>
+                            <input type="number" ng-value="0" min="0" ng-model="quantidade"/>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-3"></div>
+                    <a ng-click="addCarrinho()" class=" col-12 col-lg-6 btn btn-primary btn-grid-carrinho btn-block " >
+                        <i class="material-icons" style="color: #ffc107">add_circle_outlineshopping_cart</i>
+                        <span class="frase-btn-carrinho" style="color: white">Add ao carrinho</span>
                     </a>
-                </div>
+                    <div class="col-lg-3"></div> 
             </div>
         </div>
     </div>
