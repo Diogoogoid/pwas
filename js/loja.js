@@ -13,7 +13,7 @@ loja.config(function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state('carrinho', {
-        url: '/carrinho/:id?qtd',
+        url: '/carrinho?id&qtd',
         templateUrl: 'views/carrinho.html',
         controller: 'carrinho'
     });
@@ -36,15 +36,12 @@ loja.controller('principal', function ($scope, $produtos) {
     };
 });
 
-loja.controller('produto', function ($scope, $stateParams, $produtos, $location) {
+loja.controller('produto', function ($scope, $stateParams, $state, $produtos, $location) {
     $scope.quantidade = 0;
     $scope.produto = $produtos.getProduto($stateParams.id);
 
     $scope.addCarrinho = () => {
-        $stateParams.id= $scope.produto.id; 
-        $stateParams.qtd= $scope.quantidade; 
-    
-        $location.path("/carrinho/").search($stateParams);
+        $state.go('carrinho', {id: $scope.produto.id, qtd: $scope.quantidade});
     }
 });
 
